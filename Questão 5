@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int mdc(int n, int m) {
+    if(m==0){
+        return n;
+    }else{
+        return mdc(m,n%m);
+    }
+	return 0;
+}
+void casos(int c){
+    int n,m;
+    if(c>0){
+    scanf("%d%d",&n,&m);
+    printf("MDC(%d,%d) = %d\n",n,m,mdc(n,m));
+    return casos(c-1);
+    }
+}
+int main(){
+    int c,n,m;
+    scanf("%d",&c);
+    casos(c);
+    mdc(n,m);
+    
+
+    return 0;
+}
